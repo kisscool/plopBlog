@@ -18,6 +18,10 @@ class App < Sinatra::Base
   # loading the db model
   require File.join(File.dirname(__FILE__), 'model.rb')
 
+  before do
+    content_type :html, 'charset' => 'utf-8'
+  end
+
   get '/' do
     haml :index
   end
