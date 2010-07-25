@@ -18,11 +18,11 @@
       %label{:for => 'tags'} Tags (separated by ',') :
       %input{:type => 'text', :name => 'tags'}
     %li
-      %label{:for => 'published'} Must be published? :
-      %input{:type => 'checkbox', :name => 'published'}
+      %label{:for => 'visible'} Visible? :
+      %input{:type => 'checkbox', :name => 'visible', :value => 't'}
     %li
       %label{:for => 'oneliner'} Is it a one-liner? :
-      %input{:type => 'checkbox', :name => 'oneliner'}
+      %input{:type => 'checkbox', :name => 'oneliner', :value => 't'}
   %input{:type => "submit", :value => "Post article", :class => "button"}
 
 

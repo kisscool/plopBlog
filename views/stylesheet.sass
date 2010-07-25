@@ -3,7 +3,10 @@
 
 $darkblue: #0b1730
 $grayc: #ccc
-$lightgray: #eee
+$lightgray: #f5f5f5
+$lightgrayshadow: #d5d5d5
+$lightblue: #f2f2ff
+$lightblueshadow: #d2d2df
 
 @mixin border-radius($radius)
   border-radius: $radius
@@ -65,7 +68,7 @@ footer
 /* kikoolol */
 
 #container
-  background-color: $lightgray 
+  background-color: white 
   color: #000
   padding-left: 2%
   padding-right: 2%
@@ -78,16 +81,20 @@ footer
   padding: 0
 
 content
+
+article
+  display: block
   padding: 20px
-  background-color: #fff
-  border: 2px solid $grayc
+  background-color: $lightgray 
+  margin-top: 20px
   @include border-radius(20px 20px 20px 20px)
+  @include box-shadow(2px 2px 20px $lightgrayshadow)
   font-family: sans-serif
 
 #right-nav
-  background-color: #fff
-  border: 2px solid $grayc
+  background-color: $lightblue
   @include border-radius(20px 20px 20px 20px)
+  @include box-shadow(2px 2px 20px $lightblueshadow)
   padding: 20px
 
 #footer-wrapper

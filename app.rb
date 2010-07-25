@@ -32,7 +32,7 @@ class App < Sinatra::Base
 
   # listing of all posts
   get '/posts' do
-    @posts = Post.all
+    @posts = Post.all(:visible => true)
     haml :posts
   end
 
@@ -50,7 +50,7 @@ class App < Sinatra::Base
       tags_collection = tags.collect {|t| Tag.first_or_new(:name => t)}
       tags_collection.each {|tag| @post.tags << tag}
     end
-
+    
     @post.save
 
     # finaly we redirect towards the article

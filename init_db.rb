@@ -27,7 +27,8 @@ DataMapper.auto_migrate!
   :title  => "This is a markdown test",
   :short_title => "markdown",
   :created_at => Time.now,
-  :author => "KissCool"
+  :author => "KissCool",
+  :visible => 'true'
 )
 
 @post.body = <<-EOF
