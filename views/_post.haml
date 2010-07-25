@@ -1,0 +1,14 @@
+%article
+  %header
+    %h3.title
+      %a{:title => post.title, :href => "/post/#{post.short_title}"}= post.title
+    %p.metadata
+      Published on 
+      %time{:datetime => rfc_date(post.created_at)}= human_date(post.created_at)
+      By
+      = post.author
+      Tags
+      = post.tags.collect {|x| x.name + " "}
+  %p.body
+    = markup post.body
+

@@ -1,0 +1,12 @@
+%h2 Comments
+
+- comments.each do |comment|
+  %section
+    %header
+      %p.metadata
+      Published on
+      %time{:datetime => rfc_date(comment.created_at)}= human_date(comment.created_at)
+      By
+      = comment.author
+    %p.body
+      = comment.body

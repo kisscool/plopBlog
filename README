@@ -1,0 +1,7 @@
+gem required :
+- dm-core
+- dm-migrations
+- dm-sqlite-adapter
+- sinatra
+- haml
+- Rdiscount
