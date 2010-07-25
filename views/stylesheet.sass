@@ -84,12 +84,39 @@ content
 
 article
   display: block
-  padding: 20px
   background-color: $lightgray 
   margin-top: 20px
   @include border-radius(20px 20px 20px 20px)
   @include box-shadow(2px 2px 20px $lightgrayshadow)
   font-family: sans-serif
+  font-size: 14px
+  #article-header
+    display: block
+    background-color: $darkblue 
+    @include border-radius(20px 20px 0 0)
+    padding-top: 10px
+    padding-left: 20px
+    padding-right: 20px
+    color: #fff
+    #title-wrapper
+      display: table
+      width: 100%
+      #title
+        display: table-cell
+        a
+          color: #cce
+          font-size: 24px
+          &:visited
+            color: #cce
+      #tags
+        display: table-cell
+        text-align: right
+    #time
+      text-align: right
+      color: #aaa
+  #article-content
+    padding: 20px
+
 
 #right-nav
   background-color: $lightblue
