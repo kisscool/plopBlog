@@ -4,8 +4,8 @@
       #title
         %a{:title => post.title, :href => "/post/#{post.short_title}"}= post.title
       #tags
-        Tags
-        = post.tags.collect {|x| x.name + " "}
+        - post.tags.collect do |x|
+          #tag= x.name
     #time
       %p.metadata
         Published on 

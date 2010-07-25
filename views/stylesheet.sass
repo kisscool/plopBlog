@@ -95,6 +95,7 @@ article
     background-color: $darkblue 
     @include border-radius(20px 20px 0 0)
     padding-top: 10px
+    padding-bottom: 1px
     padding-left: 20px
     padding-right: 20px
     color: #fff
@@ -104,18 +105,29 @@ article
       #title
         display: table-cell
         a
-          color: #cce
-          font-size: 24px
+          color: lighten($darkblue, 75%) 
+          font-size: 26px
+          text-decoration: none
           &:visited
-            color: #cce
+            color: lighten($darkblue, 75%)
       #tags
         display: table-cell
         text-align: right
+        #tag
+          display: inline
+          background-color: #fff
+          color: $darkblue
+          padding: 2px
     #time
       text-align: right
-      color: #aaa
+      color: darken($lightgray, 40%) 
   #article-content
     padding: 20px
+    a
+      color: darken($lightgray, 70%) 
+      &:visited
+        color: darken($lightgray, 70%) 
+
 
 
 #right-nav
