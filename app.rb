@@ -50,7 +50,15 @@ class App < Sinatra::Base
       tags_collection = tags.collect {|t| Tag.first_or_new(:name => t)}
       tags_collection.each {|tag| @post.tags << tag}
     end
+    
+# if params[:visible] == "on" 
+#      params[:visible] = 't'
+#    end
+#    if params[:visible] == "off" 
+#      params[:visible] = 'f'
+#    end
 
+    p params
     @post.save
 
     # finaly we redirect towards the article
