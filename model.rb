@@ -12,7 +12,7 @@ class Post
   property :created_at,   DateTime
   property :author,       String
   property :body,         Text
-  property :visible,    Boolean, :default => false
+  property :visible,      Boolean, :default => false
   property :oneliner,     Boolean, :default => false
 
   has n, :comments

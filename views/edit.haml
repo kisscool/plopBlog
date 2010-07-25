@@ -1,0 +1,32 @@
+%h1 Edit article
+
+/  - if @post then
+/    %input{:type => 'hidden', :name => '_method', :value => 'put'}
+
+%form{:method => 'post', :action => (@post ? "/post/#{@post.short_title}" : '/posts')}
+  %fieldset
+    %li
+      %label{:for => 'title'} Title :
+      %input{:type => 'text', :name => 'title', :value => (@post ? @post.title : '')}
+    %li
+      %label{:for => 'short_title'} Short Title :
+      %input{:type => 'text', :name => 'short_title', :value => (@post ? @post.short_title : '')}
+    %li
+      %label{:for => 'author'} Author :
+      %input{:type => 'text', :name => 'author', :value => (@post ? @post.author : '')}
+    %li
+      %label{:for => 'body'} Body :
+      %textarea{:name => 'body', :cols => 80, :rows => 15}
+        != @post ? @post.body : ''
+    %li
+      %label{:for => 'tags'} Tags (separated by ',') :
+      %input{:type => 'text', :name => 'tags', :value => (@post ? @post.tags.collect{|x| x.name}.join(', ') : '')}
+    %li
+      %label{:for => 'visible'} Visible? :
+      %input{:type => 'checkbox', :name => 'visible', :value => 't', :checked => (@post.visible ? true : nil)}
+    %li
+      %label{:for => 'oneliner'} Is it a one-liner? :
+      %input{:type => 'checkbox', :name => 'oneliner', :value => 't', :checked => (@post.oneliner ? true : nil)}
+  %input{:type => "submit", :value => "Post article", :class => "button"}
+
+
