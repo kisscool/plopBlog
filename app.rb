@@ -36,7 +36,7 @@ class App < Sinatra::Base
     haml :posts
   end
 
-  # post creation
+  # post initial creation
   post '/posts' do
     # we set the date
     params[:created_at] = Time.now
@@ -70,12 +70,14 @@ class App < Sinatra::Base
   end
 
   # update an article
-  put '/post/:short_title' do
-    @post = Post.first(:short_title => params[:short_title])
-    not_found if !@post
+  # should be a 'put', but seems to work only as a post method
+  post '/post/:short_title' do
+    @post = Post.first_or_new(:short_title => params[:short_title])
+    #not_found if !@post
 
     # we set properties
     params_without_tags = params.reject {|k,v| k == 'tags'}
+    p params_without_tags
     params_without_tags.each {|key,val| @post[key] = val}
 
     # we extract and retrieve/tags, 
@@ -87,6 +89,7 @@ class App < Sinatra::Base
     end
 
     @post.save
+    'test'
   end
 
   # we get the form in order to edit an article
