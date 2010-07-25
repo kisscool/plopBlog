@@ -1,4 +1,5 @@
 gem required :
+- Rack
 - dm-core
 - dm-migrations
 - dm-sqlite-adapter
