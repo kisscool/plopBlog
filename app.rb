@@ -89,7 +89,9 @@ class App < Sinatra::Base
     end
 
     @post.save
-    'test'
+    
+    # finaly we redirect towards the article
+    redirect "/post/#{@post.short_title}"
   end
 
   # we get the form in order to edit an article
