@@ -32,7 +32,7 @@ class App < Sinatra::Base
 
   # listing of all posts
   get '/posts' do
-    @posts = Post.all
+    @posts = Post.all(:visible => true)
     haml :posts
   end
 
@@ -51,14 +51,6 @@ class App < Sinatra::Base
       tags_collection.each {|tag| @post.tags << tag}
     end
     
-# if params[:visible] == "on" 
-#      params[:visible] = 't'
-#    end
-#    if params[:visible] == "off" 
-#      params[:visible] = 'f'
-#    end
-
-    p params
     @post.save
 
     # finaly we redirect towards the article
