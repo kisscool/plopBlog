@@ -14,6 +14,7 @@ DataMapper.auto_migrate!
 
 @post = Post.new(
   :title  => "This is a test",
+  :short_title => "test",
   :created_at => Time.now,
   :author => "The Master",
   :body => "blablabl bla"
@@ -24,6 +25,7 @@ DataMapper.auto_migrate!
 
 @post = Post.new(
   :title  => "This is a markdown test",
+  :short_title => "markdown",
   :created_at => Time.now,
   :author => "KissCool"
 )
