@@ -1,8 +1,5 @@
 %h1 Edit article
 
-/  - if @post then
-/    %input{:type => 'hidden', :name => '_method', :value => 'put'}
-
 %form{:method => 'post', :action => (@post ? "/post/#{@post.short_title}" : '/posts')}
   %fieldset
     %li
@@ -16,8 +13,9 @@
       %input{:type => 'text', :name => 'author', :value => (@post ? @post.author : '')}
     %li
       %label{:for => 'body'} Body :
-      %textarea{:name => 'body', :cols => 80, :rows => 15}
-        != @post ? @post.body : ''
+      = find_and_preserve do
+        %textarea{:name => 'body', :cols => 80, :rows => 15}
+          = @post ? @post.body : ''
     %li
       %label{:for => 'tags'} Tags (separated by ',') :
       %input{:type => 'text', :name => 'tags', :value => (@post ? @post.tags.collect{|x| x.name}.join(', ') : '')}
