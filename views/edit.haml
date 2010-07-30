@@ -21,10 +21,10 @@
       %input{:type => 'text', :name => 'tags', :value => (@post ? @post.tags.collect{|x| x.name}.join(', ') : '')}
     %li
       %label{:for => 'visible'} Visible? :
-      %input{:type => 'checkbox', :name => 'visible', :value => 't', :checked => (@post.visible ? true : nil)}
+      %input{:type => 'checkbox', :name => 'visible', :value => 't', :checked => (@post ? (@post.visible ? true : nil) : nil)}
     %li
       %label{:for => 'oneliner'} Is it a one-liner? :
-      %input{:type => 'checkbox', :name => 'oneliner', :value => 't', :checked => (@post.oneliner ? true : nil)}
+      %input{:type => 'checkbox', :name => 'oneliner', :value => 't', :checked => (@post ? (@post.oneliner ? true : nil) : nil)}
   %input{:type => "submit", :value => "Post article", :class => "button"}
 
 
